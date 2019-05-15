@@ -1,6 +1,5 @@
 package com.crud.tasks.domain;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +28,7 @@ public class Task {
 		this.id = id;
 		this.title = title;
 		this.content = content;
-		
+
 	}
 	
 	public Long getId() {

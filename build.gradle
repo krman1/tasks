@@ -11,8 +11,8 @@ buildscript {
 		maven { url "https://repo.spring.io/milestone" }
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		//classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.20.RELEASE'
+		//classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.20.RELEASE'
 	}
 }
 
@@ -21,6 +21,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
 
 
 group = 'com.crud'
@@ -41,5 +42,10 @@ dependencies {
 	compile('org.postgresql:postgresql')
 	compile('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-	
+
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
+
+//war{
+//	archiveName 'crud.war'
+//}
