@@ -15,18 +15,18 @@ public class CreatedTrelloCard {
 	@JsonProperty("shortUrl")
 	private String shortUrl;
 	
-	@JsonProperty("badges")
-	private BadgesDto badges;
+//	@JsonProperty("badges")
+//	private BadgesDto badges;
 	
 	public CreatedTrelloCard(){
 	
 	}
 	
-	public CreatedTrelloCard(String id, String name, String shortUrl, BadgesDto badges) {
+	public CreatedTrelloCard(String id, String name, String shortUrl) {
 		this.id = id;
 		this.name = name;
 		this.shortUrl = shortUrl;
-		this.badges = badges;
+//		this.badges = badges;
 		
 	}
 	
@@ -42,7 +42,7 @@ public class CreatedTrelloCard {
 		return shortUrl;
 	}
 	
-	public BadgesDto getBadges() {
-		return badges;
-	}
+//	public BadgesDto getBadges() {
+//		return badges;
+//	}
 }
