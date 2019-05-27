@@ -45,11 +45,12 @@ public class TrelloClientTest {
 		trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());
 		
 		
-		URI uri = new URI("http://test.com/members/krman/boards?key=test&token=test&fields=name,id&lists=all");
-		when(restTemplate.getForObject(uri, TrelloBoardDto[].class)).thenReturn(trelloBoards);
+		URI url = new URI("http://test.com/members/krman/boards?key=test&token=test&fields=name,id&lists=all");
+		when(restTemplate.getForObject(url, TrelloBoardDto[].class)).thenReturn(trelloBoards);
 		
 		//When
 		List<TrelloBoardDto> fetchedTrelloBoards = trelloClient.getTrelloBoards();
+		System.out.println(fetchedTrelloBoards);
 		
 		//Then
 		assertEquals(1, fetchedTrelloBoards.size());
@@ -96,6 +97,7 @@ public class TrelloClientTest {
 		
 		//Then
 		assertNotNull(fetchedTrelloBoards);
+		assertEquals(0, fetchedTrelloBoards.size());
 	}
 	
 }
