@@ -20,4 +20,6 @@ public interface TaskRepository extends CrudRepository<Task, Long> {
 	void deleteById (Long id);
 	
 	boolean existsById (Long id);
+	
+	long count();
 }

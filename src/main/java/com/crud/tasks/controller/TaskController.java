@@ -1,8 +1,10 @@
 package com.crud.tasks.controller;
 
+import com.crud.tasks.domain.Mail;
 import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
 import com.crud.tasks.service.DbService;
+import com.crud.tasks.service.SimpleEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -17,6 +19,7 @@ public class TaskController{
 	private DbService service;
 	@Autowired
 	private TaskMapper taskMapper;
+	
 	
 	@RequestMapping(method = RequestMethod.GET, value = "getTasks")
 	public List<TaskDto> getTasks(){
