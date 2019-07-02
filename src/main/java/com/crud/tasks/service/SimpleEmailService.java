@@ -49,5 +49,13 @@ public class SimpleEmailService {
 		
 		return mailMessage;
 	}
+	private SimpleMailMessage createSchedulerMailMessage(final Mail mail) {
+		SimpleMailMessage mailSchedulerMessage = new SimpleMailMessage();
+		mailSchedulerMessage.setTo(mail.getMailTo());
+		mailSchedulerMessage.setSubject(mail.getSubject());
+		mailSchedulerMessage.setText(mailCreatorService.buildScheduleEmail(mail.getMessage()));
+		
+		return mailSchedulerMessage;
+	}
 
 }
