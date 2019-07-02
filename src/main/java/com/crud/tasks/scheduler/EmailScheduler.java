@@ -11,35 +11,35 @@ import org.springframework.stereotype.Component;
 @Component
 public class EmailScheduler {
 	
-//	@Autowired
-//	private SimpleEmailService simpleEmailService;
-//
-//	@Autowired
-//	private TaskRepository taskRepository;
-//
-//	@Autowired
-//	private AdminConfig adminConfig;
-//
-//	private static final String SUBJECT = "Tasks: One a day email";
-//	String singularOrPlural;
-//
-//	//@Scheduled( cron = "0 0 10 * * *")
-//	//@Scheduled(fixedDelay = 10000)
-//	public void sendInformationEmail() {
-//
-//		long size = taskRepository.count();
-//		if (size == 1){
-//			singularOrPlural = "task";
-//		} else {
-//			singularOrPlural = "tasks";
-//		}
-//
-//		simpleEmailService.send(new Mail(
-//				adminConfig.getAdminMail(),
-//				null,
-//				SUBJECT,
-//				"Currently in database you got: " + size + singularOrPlural)
-//		);
-//	}
-//
+	@Autowired
+	private SimpleEmailService simpleEmailService;
+
+	@Autowired
+	private TaskRepository taskRepository;
+
+	@Autowired
+	private AdminConfig adminConfig;
+
+	private static final String SUBJECT = "Tasks: One a day email";
+	String singularOrPlural;
+
+//	@Scheduled( cron = "0 0 10 * * *")
+//	@Scheduled(fixedDelay = 10000)
+	public void sendInformationEmail() {
+
+		long size = taskRepository.count();
+		if (size == 1){
+			singularOrPlural = "task";
+		} else {
+			singularOrPlural = "tasks";
+		}
+
+		simpleEmailService.send(new Mail(
+				adminConfig.getAdminMail(),
+				null,
+				SUBJECT,
+				"Currently in database you got: " + size + singularOrPlural)
+		);
+	}
+
 }

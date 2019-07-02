@@ -13,6 +13,9 @@ public class Mail {
 		this.subject = subject;
 		this.message = message;
 	}
+	public Mail(){
+	
+	}
 	
 	public String getMailTo() {
 		return mailTo;
